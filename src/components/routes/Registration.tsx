@@ -4,8 +4,8 @@ import Result from '../Result';
 import { Form, Input, InputNumber, Button, Card } from 'antd';
 
 const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
+  labelCol: { span: 3 },
+  wrapperCol: { span: 24 },
 };
 
 /* eslint-disable no-template-curly-in-string */
@@ -36,7 +36,15 @@ const Registration: FC = () => {
             <Breadcrumb locationArray={['Home', 'New User Registration']} />
             <div className="site-layout-content">
             <Card className="registration-form-card">
-                {!validData ? <Form {...layout} name="nest-messages" form={form} onFinish={onFinish} validateMessages={validateMessages}>
+                <h1>Registration</h1>
+                {!validData ? <Form 
+                                {...layout}
+                                name="nest-messages"
+                                form={form}
+                                onFinish={onFinish}
+                                validateMessages={validateMessages}
+                                labelCol={{ ...layout.labelCol }}
+                                wrapperCol={{ ...layout.wrapperCol }}>
                         <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
                             <Input />
                         </Form.Item>
@@ -52,7 +60,7 @@ const Registration: FC = () => {
                         <Form.Item name={['user', 'introduction']} label="Introduction">
                             <Input.TextArea />
                         </Form.Item>
-                        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+                        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: layout.labelCol.span }}>
                             <Button type="primary" htmlType="submit">
                             Submit
                             </Button>

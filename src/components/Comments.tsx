@@ -20,7 +20,14 @@ const AnswerList = ({ answers }: {answers: AnswerType[]}) => (
   />
 );
 
-const Editor = ({ onChange, onSubmit, submitting, value }: {onChange: ChangeEventHandler<HTMLTextAreaElement>, onSubmit: MouseEventHandler<HTMLElement>, submitting: boolean, value: string}) => (
+type editorPropTypes = {
+  onChange: ChangeEventHandler<HTMLTextAreaElement>,
+  onSubmit: MouseEventHandler<HTMLElement>,
+  submitting: boolean,
+  value: string
+}
+
+const Editor = ({ onChange, onSubmit, submitting, value }: editorPropTypes) => (
   <>
     <Form.Item>
       <TextArea rows={4} onChange={onChange} value={value} />
