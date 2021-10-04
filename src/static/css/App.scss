@@ -64,10 +64,43 @@ body {
 
 // REGISTRATION -----------------------------------------------------------------------------------
 .registration-form-card {
-    width: 60%;
+    width: 40%;
     margin: 0 auto;
+    padding: 0 40px;
 
-    form {
-        width: 80%;
+    .ant-card-body {
+        h1 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+}
+
+// LOGIN -----------------------------------------------------------------------------------
+.login-form-card {
+    width: 30%;
+    margin: 0 auto;
+    
+    .ant-card-body {
+        padding: 24px 72px;
+
+        h1 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        form {
+            .ant-input-affix-wrapper {
+                font-size: 30px;
+
+                input {
+                    font-size: 20px;
+                }
+            }
+        }
     }
 }
