@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import StyledBreadcrumb from './styles/Breadcrumb.styled';
-import { Breadcrumb as origBreadcumb } from 'antd';
+import { Breadcrumb as origBreadcrumb } from 'antd';
 
-const Breadcrumb: FC = () => (
-    <StyledBreadcrumb>
-        <origBreadcumb.Item>Home</origBreadcumb.Item>
-        <origBreadcumb.Item>List</origBreadcumb.Item>
-        <origBreadcumb.Item>App</origBreadcumb.Item>
-    </StyledBreadcrumb>
-)
+const Breadcrumb: FC<{locationArray: string[] | undefined}> = ({locationArray}) => {
+    return (<StyledBreadcrumb>
+                {locationArray && locationArray.map((part: string, index: number) => (
+                    <origBreadcrumb.Item key={index}>{part}</origBreadcrumb.Item>
+                ))}
+            </StyledBreadcrumb>)
+}
 
 export default Breadcrumb;

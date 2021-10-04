@@ -3,5 +3,6 @@ import { Breadcrumb } from 'antd';
 import styled from '@emotion/styled';
 
 export default styled(Breadcrumb)({
-    margin: '16px 0'
+    margin: '16px 0',
+    fontSize: '16px'
 })
