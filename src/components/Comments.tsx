@@ -1,6 +1,7 @@
 import { Comment, Avatar, Form, Button, List, Input } from 'antd';
 import moment from 'moment';
 import React, { ChangeEventHandler, MouseEventHandler } from 'react';
+import IconBar from './IconBar';
 
 const { TextArea } = Input;
 
@@ -16,7 +17,10 @@ const AnswerList = ({ answers }: {answers: AnswerType[]}) => (
     dataSource={answers}
     header={`${answers.length} ${answers.length > 1 ? 'replies' : 'reply'}`}
     itemLayout="horizontal"
-    renderItem={props => <Comment {...props} />}
+    renderItem={props => <Comment {...props} actions={[<IconBar 
+      className="comment-icon-bar"
+      editHandler={() => console.log('comment edited')}
+      deleteHandler={() => console.log('comment deleted')} />]} />}
   />
 );
 

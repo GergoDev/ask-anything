@@ -11,5 +11,19 @@ export default styled(Header)({
     },
     '.ant-menu-title-content': {
         fontSize: '20px'
+    },
+    '.signed-in-user': {
+        color: '#fff',
+        marginRight: '10px',
+        fontSize: '25px',
+        fontWeight: 'bold'
+    },
+    '.avatar': {
+        display: 'flex',
+        alignItems: 'center',
+        marginLeft: 'auto',
+        '.ant-avatar-circle': {
+            backgroundColor: '#fff'
+        }
     }
 })

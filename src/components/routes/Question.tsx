@@ -5,7 +5,11 @@ import Comments from '../Comments';
 import { Card, Row, Col } from 'antd';
 import { CaretUpOutlined, CaretDownOutlined } from '@ant-design/icons';
 import { DataItem } from '../../interfaces/DataItem';
+import IconBar from '../IconBar';
 import data from '../../mock_data';
+
+const editHandler = () => console.log('edit clicked');
+const deleteHandler = () => console.log('edit clicked');
 
 const Question: FC = () => {
     const {id}: {id: string} = useParams();
@@ -24,7 +28,13 @@ const Question: FC = () => {
         <>
             <Breadcrumb locationArray={['Home', 'Question', 'How to set a custom ringtone on your Nokia 3310?']} />
             <div className="site-layout-content">  
-                {question && <Card title={question.title} className="question-card">
+                {question && <Card 
+                                title={question.title}
+                                className="question-card"
+                                extra={<IconBar 
+                                            className="question-icon-bar"
+                                            editHandler={editHandler}
+                                            deleteHandler={deleteHandler} />}>
                     <Row gutter={16} className="details">
                         <Col span={6}>
                             <Card size="small" title="Submitted at" bordered={true}>
@@ -42,7 +52,11 @@ const Question: FC = () => {
                             </Card>
                         </Col>
                         <Col span={6}>
-                            <Card size="small" title="Vote" bordered={true} extra={<><a href="http://google.com"><CaretUpOutlined /></a><a href="http://google.com"><CaretDownOutlined /></a></>}>
+                            <Card 
+                                size="small"
+                                title="Vote"
+                                bordered={true}
+                                extra={<><a href="http://google.com">UP<CaretUpOutlined /></a><a href="http://google.com">DOWN<CaretDownOutlined /></a></>}>
                             {question.vote}
                             </Card>
                         </Col>

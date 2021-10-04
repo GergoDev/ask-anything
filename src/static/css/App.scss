@@ -104,3 +104,26 @@ body {
         }
     }
 }
+
+// ICON BAR -----------------------------------------------------------------------------------
+.icon-bar {
+    .anticon {
+        margin-left: 5px;
+
+        &.anticon-edit {
+            color: #35b84b;
+        }
+
+        &.anticon-delete {
+            color: #b83535;
+        }
+    }
+}
+
+.question-icon-bar {
+    font-size: 25px;
+}
+
+.comment-icon-bar {
+    font-size: 16px;
+}
