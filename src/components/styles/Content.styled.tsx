@@ -6,5 +6,4 @@ const { Content } = Layout;
 
 export default styled(Content)({
     padding: '0 50px',
-    height: 'calc(100vh - 133.33px)'
 })
