@@ -1,8 +1,8 @@
 export interface DataItem {
+    id: number;
     key: number;
     user_id: number;
     user_name: string;
-    question_id: number;
     by: string;
     title: string;
     message: string;

@@ -6,7 +6,7 @@ import './static/css/App.scss';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
-import AllQuestions from './components/routes/AllQuestions';
+import AllQuestions from './components/routes/AllQuestions/AllQuestions';
 import Registration from './components/routes/Registration';
 import Login from './components/routes/Login';
 import Profile from './components/routes/Profile';

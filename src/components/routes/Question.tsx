@@ -1,12 +1,11 @@
 import { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Breadcrumb from '../Breadcrumb';
-import Comments from '../Comments';
+import Answers from '../Answers/Answers';
 import { Card, Row, Col } from 'antd';
 import { CaretUpOutlined, CaretDownOutlined } from '@ant-design/icons';
 import { DataItem } from '../../interfaces/DataItem';
 import IconBar from '../IconBar';
-import data from '../../mock_data';
 
 const editHandler = () => console.log('edit clicked');
 const deleteHandler = () => console.log('edit clicked');
@@ -15,14 +14,19 @@ const Question: FC = () => {
     const {id}: {id: string} = useParams();
     const [question, setQuestion] = useState<DataItem>();
 
-    const loadData = (id: string) => {
-        return data.filter((question) => question.question_id === parseInt(id))[0];
+    const fetchQuestions = async (id: number) => {
+        const res = await fetch(`http://localhost:5000/questions/${id}`);
+        const data = await res.json();
+        return data;
     }
 
     useEffect(() => {
-        const question = loadData(id);
-        setQuestion(question);
-    }, [id]);
+        const getData = async () => {
+            const question = await fetchQuestions(parseInt(id));
+            setQuestion(question);
+        }
+        getData();
+    }, [id])
 
     return (
         <>
@@ -64,7 +68,7 @@ const Question: FC = () => {
                     <Card className="question-message">
                         <div dangerouslySetInnerHTML={{__html: question.message.replace(/(\r\n|\n\r|\r|\n)/g, '<br>')}}></div>
                     </Card>
-                    <Comments />
+                    <Answers question_id={id} />
                 </Card>}
             </div>
         </>
