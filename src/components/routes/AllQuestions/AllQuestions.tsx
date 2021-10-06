@@ -2,6 +2,7 @@ import { FC, useState, useEffect } from 'react';
 import { Table } from 'antd';
 import Breadcrumb from '../../Breadcrumb';
 import columns from './table_columns';
+import { QuestionInterface } from '../../../interfaces/QuestionInterface';
 
 const AllQuestions: FC = () => {
     const [questions, setQuestions] = useState();
@@ -15,7 +16,8 @@ const AllQuestions: FC = () => {
     useEffect(() => {
         const getQuestions = async () => {
             const data = await fetchData();
-            setQuestions(data);
+            const dataWithKeys = data.map((question: QuestionInterface) => {return {...question, key: question.id}});
+            setQuestions(dataWithKeys);
         }
         getQuestions();
     }, [])
@@ -29,7 +31,7 @@ const AllQuestions: FC = () => {
             bordered
             pagination= {{ 
                 position: ['bottomCenter'],
-                pageSize: 1
+                pageSize: 7
             }} />
       </div>
     </>)

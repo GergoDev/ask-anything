@@ -1,6 +1,5 @@
 export interface QuestionInterface {
     id: number;
-    key: number;
     user_id: number;
     user_name: string;
     by: string;

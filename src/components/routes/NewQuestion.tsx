@@ -23,7 +23,7 @@ const NewQuestion: FC = () => {
                     "by": "gergo@gmail.com",
                     "title": title,
                     message,
-                    "submission_time": Date(),
+                    "submission_time": new Date().toLocaleString('hu-HU', { timeZone: 'UTC' }),
                     "view": 0,
                     "vote": 0
                 })
