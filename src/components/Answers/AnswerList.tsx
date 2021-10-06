@@ -12,7 +12,6 @@ const AnswerList = ({ answers, deleteHandler }: {answers: AnswerInterface[], del
       const alteredProps = {...props, datetime: moment(props.datetime).fromNow()};
       return (<Comment {...alteredProps} actions={[<IconBar 
       className="comment-icon-bar"
-      editHandler={() => console.log(props)}
       deleteHandler={() => deleteHandler(props.id)} />]} />)}}
   />)
   };
