@@ -15,11 +15,11 @@ const Header: FC = () => (
           <Menu.Item key="4"><Link to="/new-question">New Question</Link></Menu.Item>
         </Menu>
         <div className="avatar">
-          <span className="signed-in-user">Gergo</span>
+          <span className="signed-in-user">Pisti</span>
           <Avatar 
             size={54}
-            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-            alt="Han Solo" />
+            src="https://i.pravatar.cc/400?img=33"
+            alt="Pisti" />
         </div>
     </StyledHeader>
 )

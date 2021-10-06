@@ -110,11 +110,19 @@ body {
     .anticon {
         margin-left: 5px;
 
-        &.anticon-edit {
-            color: #35b84b;
+        &.anticon {
+            color: #777575;
+        }
+
+        &.anticon:hover {
+            color: #000000;
         }
 
         &.anticon-delete {
+            color: #b16868;
+        }
+
+        &.anticon-delete:hover {
             color: #b83535;
         }
     }

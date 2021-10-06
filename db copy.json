@@ -1,0 +1,50 @@
+{
+  "questions": [
+    {
+      "id": 20,
+      "key": 1,
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "How to set a custom ringtone on your Nokia 3310?",
+      "message": "We will show you through this article how to set a custom ringtone on your Nokia 3310 (2017), especially if this ringtone comes from an MP3 file.\nEven better, we’ll show you how to edit your favorite MP3 tracks on your Nokia 3310 (2017). For example, you may want to retain only the chorus of your favorite music as a ringtone for your Nokia 3310 (2017). This is possible through many applications for your Nokia 3310 (2017) as discussed in the second part of this article.\nFinally, we’ll see how to set a custom ringtone for a particular contact.\nWe assume in this tutorial that you have all the knowledge about the property rights of musics and ringtones used on your Nokia 3310 (2017).",
+      "submission_time": "2021-02-18 19:09:52",
+      "view": 97,
+      "vote": 36
+    },
+    {
+      "id": 25,
+      "key": 2,
+      "user_id": 2,
+      "user_name": "Pisti",
+      "by": "david@freemail.hu",
+      "title": "HELP!! - FPS drop in ALL games; 60fps to 10 fps",
+      "message": "Hello everyone :D\nFirst off, my system specs are;\nAlienware M14X Laptop. (Approx. 1 year old)\nGPU: GeForce GT 650M\nIntel i7 3740QM at 2.70GHz\n12 gigs of RAM\nWindows 7 Home Premium 64 bit\nCurrent NVIDIA driver version: 335.23\nI am having really bad problems. EVERY SINGLE game I have is unplayable. Let me explain.\nFor example, on Thief, I run the game and it starts at a brilliant straight 60, 70 or 80 fps. In the loading screen, it drops to about 30. Then, when in game again, it sits at about 50-60 fps. The longer I play, the more it drops. After about 3-5 minutes, I'm sitting at 20-30 fps. This isn't an instant drop. It drops slowly, and I'm losing about 3 frames every second. Then after a few more minutes, it drops again to 7-15 fps. This SUCKS!!!\nI've found that disabling background processes in the task manager shoots the fps back up to 40-60, but after about 30 seconds it drops back down to 7-15. I have to shut down a background process every 3 minutes if I want to play the game without ridiculous lag. Eventually, after I have disabled EVERY SINGLE background process, even Windows Explorer, Thief plays at 60 for about two minutes before dropping down to 7-15 over the space of 20 seconds.\nMy Thief settings are set at the GeForce experience recommendations, which are:\nContract Hardening Shadows: Off\nDepth of Field Quality: Normal (which is the lowest setting)\nDisplay Mode: Full-screen\nFXAA: On\nParallax Occlusion Mapping: Off\nResolution: 1280 X 800\nScreenspace Reflection: Off\nShadow Quality: Low\nSSAA: Off\nTessellation: Off\nTexture Filtering Quality: 16X Anisotropic\nTexture Filtering Quality: High\n\nA similar thing happens in Need for Speed: Rivals. I start off at a strong 30 (the game is limited to 30 fps) and after about one minute of driving, I drop down to 7 fps. This isn't an instant drop, either. It falls over the course of about 30 seconds.\nMy NFS: Rivals settings:\nAmbient Occlusion: Off\nDisplay Mode: Full-Screen\nEffects Quality: Low\nHeadlight Shadows: Off\nLighting Quality: Low\nMotion Blur: Off\nReflection Quality: Low (I can't turn it off)\nResolution: 1400 X 900\n",
+      "submission_time": "2021-02-18 19:00:24",
+      "view": 44,
+      "vote": 26
+    }
+  ],
+  "answers": [
+    {
+      "id": 2,
+      "question_id": 20,
+      "user_id": 1,
+      "author": "Margaret",
+      "content": "some answer 2",
+      "avatar": "https://i.pravatar.cc/400?img=16",
+      "datetime": "2021-02-18 19:00:24"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Gergo",
+      "email": "gergo@gmail.com",
+      "password": "asdf",
+      "age": "34",
+      "github": "http://github.com/GergoDEV",
+      "introduction": "I'am a Self-Motivated and Proficient Front-End Web Developer with the skills that needed for a Pixel Perfect beautiful Responsive WEB Design."
+    }
+  ]
+}
