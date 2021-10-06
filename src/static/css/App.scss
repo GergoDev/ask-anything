@@ -150,3 +150,12 @@ body {
         }
     }
 }
+
+// EDIT QUESTION -----------------------------------------------------------------------------------
+.edit-question-card {
+    margin-bottom: 24px;
+
+    .ant-card-body {
+        padding-bottom: 0;
+    }
+}

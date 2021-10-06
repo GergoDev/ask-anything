@@ -9,7 +9,6 @@ const NewQuestion: FC = () => {
     const [redirect, setRedirect] = useState(false);
 
     const onFinish = async () => {
-        console.log('Success:', title, message);
         await fetch('http://localhost:5000/questions',
             {
                 method: 'POST',
@@ -17,7 +16,6 @@ const NewQuestion: FC = () => {
                     'Content-type': 'application/json'
                 },
                 body: JSON.stringify({
-                    "key": 1,
                     "user_id": 1,
                     "user_name": "Zoli",
                     "by": "gergo@gmail.com",
