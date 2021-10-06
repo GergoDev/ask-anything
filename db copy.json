@@ -33,7 +33,25 @@
       "author": "Margaret",
       "content": "some answer 2",
       "avatar": "https://i.pravatar.cc/400?img=16",
-      "datetime": "2021-02-18 19:00:24"
+      "datetime": "Tue Oct 05 2021 23:16:13 GMT+0200 (Central European Summer Time)"
+    },
+    {
+      "author": "Pisti",
+      "user_id": 1,
+      "question_id": 20,
+      "avatar": "https://i.pravatar.cc/400?img=33",
+      "content": "sdfdsfsdf",
+      "datetime": "Wed Oct 06 2021 12:15:33 GMT+0200 (Central European Summer Time)",
+      "id": 3
+    },
+    {
+      "author": "Pisti",
+      "user_id": 1,
+      "question_id": 25,
+      "avatar": "https://i.pravatar.cc/400?img=33",
+      "content": "new answer",
+      "datetime": "Wed Oct 06 2021 12:15:46 GMT+0200 (Central European Summer Time)",
+      "id": 4
     }
   ],
   "users": [

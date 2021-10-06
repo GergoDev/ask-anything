@@ -1,44 +1,88 @@
 import { FC, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import Breadcrumb from '../Breadcrumb';
 import Answers from '../Answers/Answers';
-import { Card, Row, Col } from 'antd';
-import { CaretUpOutlined, CaretDownOutlined } from '@ant-design/icons';
+import { Card, Row, Col, Modal } from 'antd';
+import { CaretUpOutlined, CaretDownOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 import { QuestionInterface } from '../../interfaces/QuestionInterface';
 import IconBar from '../IconBar';
+import EditQuestion from '../EditQuestion';
 
-const editHandler = () => console.log('edit clicked');
-const deleteHandler = () => console.log('edit clicked');
+const { confirm } = Modal;
 
 const Question: FC = () => {
     const {id}: {id: string} = useParams();
     const [question, setQuestion] = useState<QuestionInterface>();
+    const [redirect, setRedirect] = useState("");
+    const [edit, setEdit] = useState(false);
 
     const fetchQuestion = async (id: number) => {
         const res = await fetch(`http://localhost:5000/questions/${id}`);
         const data = await res.json();
         return data;
     }
-
+    
     useEffect(() => {
         const getData = async () => {
             const question = await fetchQuestion(parseInt(id));
             setQuestion(question);
         }
         getData();
-    }, [id])
+    }, [id, edit])
+    
+    const editHandler = async (values: any) => {
+        const updatedQuestion = {
+            ...question,
+            title: values.title,
+            message: values.message,
+        }
+        await fetch(`http://localhost:5000/questions/${id}`,
+            {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(updatedQuestion)
+            })
+        setEdit(false);
+    }
+
+    const deleteHandler = async () => {
+        await fetch(`http://localhost:5000/questions/${id}`,
+            {method: 'DELETE'});
+        setRedirect("/");
+    }
+
+    function showDeleteConfirm() {
+        confirm({
+          title: 'Delete this question?',
+          icon: <ExclamationCircleOutlined />,
+          content: 'Are you sure you want to delete this question?',
+          okText: 'Yes',
+          okType: 'danger',
+          cancelText: 'No',
+          onOk() {
+            deleteHandler();
+          },
+          onCancel() {
+            console.log('Cancel');
+          },
+        });
+      }
 
     return (
         <>
-            <Breadcrumb locationArray={['Home', 'Question', 'How to set a custom ringtone on your Nokia 3310?']} />
+            {redirect && <Redirect to={redirect} />}
+            <Breadcrumb locationArray={['Home', 'Question', question ? question.title : '']} />
             <div className="site-layout-content">  
                 {question && <Card 
                                 title={question.title}
                                 className="question-card"
                                 extra={<IconBar 
                                             className="question-icon-bar"
-                                            editHandler={editHandler}
-                                            deleteHandler={deleteHandler} />}>
+                                            editHandler={() => setEdit(true)}
+                                            deleteHandler={showDeleteConfirm} />}>
+                    {edit && <EditQuestion question={question} editHandler={editHandler} />}
                     <Row gutter={16} className="details">
                         <Col span={6}>
                             <Card size="small" title="Submitted at" bordered={true}>

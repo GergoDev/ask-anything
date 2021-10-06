@@ -21,7 +21,7 @@ const columns = [
     {
       title: 'Message',
       dataIndex: 'message',
-      render: (msg: string) => `${msg.substring(0, 500)}...`
+      render: (msg: string) => msg.length > 500 ? `${msg.substring(0, 500)}...` : msg
     },
     {
       title: 'Submission Time',
