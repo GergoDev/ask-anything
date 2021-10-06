@@ -66,7 +66,7 @@ class Answers extends React.Component<{question_id: string}> {
       this.addAnswer({
         author: 'Pisti',
         user_id: 1,
-        question_id: 20,
+        question_id: parseInt(this.props.question_id),
         avatar: 'https://i.pravatar.cc/400?img=33',
         content: this.state.value,
         datetime: Date(),

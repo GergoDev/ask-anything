@@ -40,9 +40,18 @@
       "user_id": 1,
       "question_id": 20,
       "avatar": "https://i.pravatar.cc/400?img=33",
-      "content": "valamicsoda ize",
-      "datetime": "Tue Oct 05 2021 23:19:45 GMT+0200 (Central European Summer Time)",
+      "content": "sdfdsfsdf",
+      "datetime": "Wed Oct 06 2021 12:15:33 GMT+0200 (Central European Summer Time)",
       "id": 3
+    },
+    {
+      "author": "Pisti",
+      "user_id": 1,
+      "question_id": 25,
+      "avatar": "https://i.pravatar.cc/400?img=33",
+      "content": "new answer",
+      "datetime": "Wed Oct 06 2021 12:15:46 GMT+0200 (Central European Summer Time)",
+      "id": 4
     }
   ],
   "users": [

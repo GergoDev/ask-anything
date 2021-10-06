@@ -4,7 +4,7 @@ import Breadcrumb from '../Breadcrumb';
 import Answers from '../Answers/Answers';
 import { Card, Row, Col } from 'antd';
 import { CaretUpOutlined, CaretDownOutlined } from '@ant-design/icons';
-import { DataItem } from '../../interfaces/DataItem';
+import { QuestionInterface } from '../../interfaces/QuestionInterface';
 import IconBar from '../IconBar';
 
 const editHandler = () => console.log('edit clicked');
@@ -12,9 +12,9 @@ const deleteHandler = () => console.log('edit clicked');
 
 const Question: FC = () => {
     const {id}: {id: string} = useParams();
-    const [question, setQuestion] = useState<DataItem>();
+    const [question, setQuestion] = useState<QuestionInterface>();
 
-    const fetchQuestions = async (id: number) => {
+    const fetchQuestion = async (id: number) => {
         const res = await fetch(`http://localhost:5000/questions/${id}`);
         const data = await res.json();
         return data;
@@ -22,7 +22,7 @@ const Question: FC = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const question = await fetchQuestions(parseInt(id));
+            const question = await fetchQuestion(parseInt(id));
             setQuestion(question);
         }
         getData();

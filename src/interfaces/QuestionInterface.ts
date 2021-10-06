@@ -1,4 +1,4 @@
-export interface DataItem {
+export interface QuestionInterface {
     id: number;
     key: number;
     user_id: number;
