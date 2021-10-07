@@ -1,5 +1,5 @@
 import { Button, Card, Form, Input } from 'antd';
-import { FC, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import Breadcrumb from '../Breadcrumb';
 import { Redirect } from 'react-router-dom';
 
@@ -7,9 +7,10 @@ const NewQuestion: FC = () => {
     const [title, setTitle] = useState("");
     const [message, setMessage] = useState("");
     const [redirect, setRedirect] = useState(false);
+    const newId = useRef('');
 
     const onFinish = async () => {
-        await fetch('http://localhost:5000/questions',
+        const res = await fetch('http://localhost:5000/questions',
             {
                 method: 'POST',
                 headers: {
@@ -27,11 +28,13 @@ const NewQuestion: FC = () => {
                 })
             }
         )
+        const newQuestion = await res.json();
+        newId.current = newQuestion.id;
         setRedirect(true);
     };
 
     return (<>
-        {redirect && <Redirect to="/" />}
+        {redirect && <Redirect to={`/question/${newId.current}`} />}
         <Breadcrumb locationArray={['Home', 'Create a New Question']} />
         <div className="site-layout-content">
             <Card className="new-question-card">

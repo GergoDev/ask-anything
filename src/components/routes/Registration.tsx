@@ -4,7 +4,7 @@ import Result from '../Result';
 import { Form, Input, InputNumber, Button, Card } from 'antd';
 
 const layout = {
-  labelCol: { span: 3 },
+  labelCol: { span: 6 },
   wrapperCol: { span: 24 },
 };
 
@@ -46,10 +46,10 @@ const Registration: FC = () => {
                                 labelCol={{ ...layout.labelCol }}
                                 wrapperCol={{ ...layout.wrapperCol }}>
                         <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
-                            <Input />
+                            <Input placeholder="Choose a Username" />
                         </Form.Item>
                         <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email' , required: true}]}>
-                            <Input />
+                            <Input placeholder="Your Email Address" />
                         </Form.Item>
                         <Form.Item name={['user', 'password']} label="Password" rules={[{ required: true}]} hasFeedback>
                             <Input.Password type="password" placeholder="Password" />
@@ -77,16 +77,16 @@ const Registration: FC = () => {
                             <Input.Password type="password" placeholder="Confirm Password" />
                         </Form.Item>
                         <Form.Item name={['user', 'age']} label="Age" rules={[{ type: 'number', min: 0, max: 99 }]}>
-                            <InputNumber />
+                            <InputNumber placeholder="Age" />
                         </Form.Item>
                         <Form.Item name={['user', 'github']} label="Github">
-                            <Input />
+                            <Input placeholder="Your GitHub Username" />
                         </Form.Item>
                         <Form.Item name={['user', 'introduction']} label="Introduction">
-                            <Input.TextArea />
+                            <Input.TextArea placeholder="Introduce Yourself" />
                         </Form.Item>
                         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: layout.labelCol.span }}>
-                            <Button type="primary" htmlType="submit">
+                            <Button type="primary" size="large" htmlType="submit">
                             Submit
                             </Button>
                         </Form.Item>

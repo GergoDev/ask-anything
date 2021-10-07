@@ -6,7 +6,7 @@ body {
 // QUESTION LIST TABLE ----------------------------------------------------------------------------
 .ant-table {
     width: 80%;
-    margin: 0 auto 50px;
+    margin: 0 auto;
 
     table { 
         font-size: 16px;
@@ -29,7 +29,7 @@ body {
     }
 
     .question-message {
-        font-size: 16px;
+        font-size: 18px;
         margin: 24px 0;
     }
 
@@ -45,7 +45,7 @@ body {
             }
 
             .ant-card-body {
-                font-size: 16px;
+                font-size: 25px;
             }
         }
     }
@@ -59,6 +59,24 @@ body {
     h2 {
         text-align: center;
         font-size: 30px;
+    }
+
+    .ant-list-header {
+        font-size: 18px;
+    }
+
+    .ant-comment {
+        span {
+            font-size: 16px !important;
+        }
+
+        .ant-comment-content-detail {
+            font-size: 18px !important;;
+        }
+
+        .ant-input {
+            font-size: 16px;
+        }
     }
 }
 
@@ -74,6 +92,20 @@ body {
             margin-bottom: 24px;
             font-size: 30px;
             font-weight: bold;
+        }
+
+        form {
+            label {
+                font-size: 18px;
+            }
+
+            .ant-input, .ant-input-number-input {
+                font-size: 16px;
+            }
+
+            .ant-input-affix-wrapper {
+                font-size: 20px;
+            }
         }
     }
 }
@@ -148,6 +180,10 @@ body {
             font-size: 30px;
             font-weight: bold;
         }
+
+        .ant-input {
+            font-size: 16px;
+        }
     }
 }
 
@@ -157,5 +193,9 @@ body {
 
     .ant-card-body {
         padding-bottom: 0;
+
+        .ant-input {
+            font-size: 16px;
+        }
     }
 }
