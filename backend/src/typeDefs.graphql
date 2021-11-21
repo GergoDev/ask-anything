@@ -1,0 +1,84 @@
+type Query {
+    feedQuestions: [Question!]!
+    feedQuestion(id: ID!): Question!
+    getUser: User!
+}
+
+type Mutation {
+    signup(
+        name: String!, 
+        email: String!, 
+        password: String!,
+        age: Int!,
+        github: String!,
+        introduction: String!): AuthPayload
+    login(
+        email: String!, 
+        password: String!): AuthPayload
+    postQuestion(
+        title: String!, 
+        message: String!): Question!
+    updateQuestion(
+        id: ID!, 
+        title: String!, 
+        message: String!): Question!
+    deleteQuestion(id: ID!): Question!
+    vote(questionId: ID!): Vote!
+    addView(questionId: ID!): Question!
+    postAnswer(
+        questionId: ID!, 
+        content: String!,
+        avatar: String!): Answer!
+    updateAnswer(
+        id: ID!,
+        text: String!): Answer!
+    deleteAnswer(id: ID!): Answer!
+}
+
+type Question {
+    id: ID!
+    key: ID!
+    title: String!
+    message: String!
+    submissionTime: String!
+    view: Int!
+    voteCount: Int!
+    votes: [Vote!]!
+    answers: [Answer!]!
+    user: User!
+}
+
+type Answer {
+  id: ID!
+  key: ID!
+  author: String!
+  content: String!
+  datetime: String!
+  avatar: String!
+  question: Question!
+  user: User!
+}
+
+type Vote {
+    id: ID!
+    user: User!
+    question: Question!
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    password: String!
+    age: Int!
+    github: String!
+    introduction: String!
+    questions: [Question!]!
+    answers: [Answer!]!
+    votes: [Vote!]!
+}
+
+type AuthPayload {
+    token: String
+    user: User
+}

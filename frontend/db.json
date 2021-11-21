@@ -1,0 +1,210 @@
+{
+  "questions": [
+    {
+      "id": 20,
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "How to set a custom ringtone on your Nokia 3310",
+      "message": "We will show you through this article how to set a custom ringtone on your Nokia 3310 (2017), especially if this ringtone comes from an MP3 file.\nEven better, we’ll show you how to edit your favorite MP3 tracks on your Nokia 3310 (2017). For example, you may want to retain only the chorus of your favorite music as a ringtone for your Nokia 3310 (2017). This is possible through many applications for your Nokia 3310 (2017) as discussed in the second part of this article.\nFinally, we’ll see how to set a custom ringtone for a particular contact.\nWe assume in this tutorial that you have all the knowledge about the property rights of musics and ringtones used on your Nokia 3310 (2017).",
+      "submission_time": "2021. 02. 18. 19:09:52",
+      "view": 97,
+      "vote": 36
+    },
+    {
+      "id": 25,
+      "user_id": 2,
+      "user_name": "Pisti",
+      "by": "david@freemail.hu",
+      "title": "HELP!! - FPS drop in ALL games; 60fps to 120 fps",
+      "message": "Hello everyone :D\nFirst off, my system specs are;\nAlienware M14X Laptop. (Approx. 1 year old)\nGPU: GeForce GT 650M\nIntel i7 3740QM at 2.70GHz\n12 gigs of RAM\nWindows 7 Home Premium 64 bit\nCurrent NVIDIA driver version: 335.23\nI am having really bad problems. EVERY SINGLE game I have is unplayable. Let me explain.\nFor example, on Thief, I run the game and it starts at a brilliant straight 60, 70 or 80 fps. In the loading screen, it drops to about 30. Then, when in game again, it sits at about 50-60 fps. The longer I play, the more it drops. After about 3-5 minutes, I'm sitting at 20-30 fps. This isn't an instant drop. It drops slowly, and I'm losing about 3 frames every second. Then after a few more minutes, it drops again to 7-15 fps. This SUCKS!!!\nI've found that disabling background processes in the task manager shoots the fps back up to 40-60, but after about 30 seconds it drops back down to 7-15. I have to shut down a background process every 3 minutes if I want to play the game without ridiculous lag. Eventually, after I have disabled EVERY SINGLE background process, even Windows Explorer, Thief plays at 60 for about two minutes before dropping down to 7-15 over the space of 20 seconds.\nMy Thief settings are set at the GeForce experience recommendations, which are:\nContract Hardening Shadows: Off\nDepth of Field Quality: Normal (which is the lowest setting)\nDisplay Mode: Full-screen\nFXAA: On\nParallax Occlusion Mapping: Off\nResolution: 1280 X 800\nScreenspace Reflection: Off\nShadow Quality: Low\nSSAA: Off\nTessellation: Off\nTexture Filtering Quality: 16X Anisotropic\nTexture Filtering Quality: High\n\nA similar thing happens in Need for Speed: Rivals. I start off at a strong 30 (the game is limited to 30 fps) and after about one minute of driving, I drop down to 7 fps. This isn't an instant drop, either. It falls over the course of about 30 seconds.\nMy NFS: Rivals settings:\nAmbient Occlusion: Off\nDisplay Mode: Full-Screen\nEffects Quality: Low\nHeadlight Shadows: Off\nLighting Quality: Low\nMotion Blur: Off\nReflection Quality: Low (I can't turn it off)\nResolution: 1400 X 900\n",
+      "submission_time": "2021. 02. 18. 19:00:24",
+      "view": 44,
+      "vote": 26
+    },
+    {
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "What does the “yield” keyword do?",
+      "message": "What is the use of the yield keyword in Python, and what does it do?\n\nFor example, I'm trying to understand this code1:\n\ndef _get_child_candidates(self, distance, min_dist, max_dist):\nif self._leftchild and distance - max_dist < self._median:\nyield self._leftchild\nif self._rightchild and distance + max_dist >= self._median:\nyield self._rightchild\nAnd this is the caller:\n\nresult, candidates = [], [self]\nwhile candidates:\nnode = candidates.pop()\ndistance = node._get_dist(obj)\nif distance <= max_dist and distance >= min_dist:\nresult.extend(node._values)\ncandidates.extend(node._get_child_candidates(distance, min_dist, max_dist))\nreturn result\nWhat happens when the method _get_child_candidates is called? Is a list returned? A single element? Is it called again? When will subsequent calls stop?",
+      "submission_time": "2021. 03. 06. 10:02:30",
+      "view": 57,
+      "vote": 8,
+      "id": 26
+    },
+    {
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "Mayavi colorbar in TraitsUI creating blank window",
+      "message": "I'm trying to create a GUI in TraitsUI that includes two Mayavi figures. I have implemented these figures as per the multiple engines example in the Mayavi documentation.\n\nHowever, when I add a colorbar to one of the figures and run the GUI script it sometimes opens a blank Mayavi Scene Editor window in addition to the desired TraitsUI window. This blank window doesn't always appear, never on the first run after restarting the python kernel, and sometimes only after running the script a few times in succession and closing the windows that appear each time.\n\nRunning the much-reduced code below produces the same behaviour, and removing the mlab.colorbar(s) line stops the problem. How can I get a colorbar without opening blank windows? There doesn't seem to be an obvious way to assign a colorbar to a specific figure as for the surface plot. I am running Python 3.5 on Windows 7 (but get the same issues on Ubuntu).\n\nfrom traits.api import HasTraits, Instance, on_trait_change\nfrom traitsui.api import View, Item\nimport numpy as np\n\nfrom mayavi.core.api import Engine\nfrom mayavi.core.ui.api import SceneEditor, MlabSceneModel\nfrom mayavi import mlab\n\n#Generate a test surface to display\ndef test_surf():\nx, y = np.mgrid[-7.:7.05:0.1, -5.:5.05:0.05]\nz = np.sin(x + y) + np.sin(2 * x - y) + np.cos(3 * x + 4 * y)\nreturn x, y, z\n\nclass MyApp(HasTraits):\n\n#Create a mayavi scene with a specified engine\nengine = Instance(Engine, ())\nscene = Instance(MlabSceneModel)\ndef _scene_default(self):\nself.engine.start()\nreturn MlabSceneModel(engine=self.engine)\n\n#Plot the surface when the scene is activated\n@on_trait_change('scene.activated')\ndef populate_scene(self):\ns = mlab.surf(*test_surf(), figure=self.scene.mayavi_scene)\nmlab.colorbar(s)\n\nview = View(Item('scene', editor=SceneEditor()))\n\nif __name__ == '__main__':\nMyApp().configure_traits()",
+      "submission_time": "2021. 04. 02. 10:03:25",
+      "view": 896,
+      "vote": 77,
+      "id": 27
+    },
+    {
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "Google App Engine Remote API does not work from local client",
+      "message": "This is using the Python SDK version 1.8.0.\n\nMy remote API works fine using remote_api_shell.py, but doesn't work when trying to accessing from within a python script. I'm using the sample code from google:\n\nfrom google.appengine.ext.remote_api import remote_api_stub\nimport getpass\n\ndef auth_func():\nreturn (raw_input('Username:'), getpass.getpass('Password:'))\n\nremote_api_stub.ConfigureRemoteApi(None, '/_ah/remote_api', auth_func,\n'localhost:8080')\nand I'm also importing the fix_sys_path() from dev_appserver.py to set my sys.path correctly for the google app engine SDK:\n\nimport dev_appserver\ndev_appserver.fix_sys_path()\nthat adds, among other paths, the following line to my sys.path:\n\n'/google_appengine_1.8.0/lib/fancy_urllib'\nHowever, the following error is thrown when the above call to remote_api_stub.ConfigureRemoteApi() is called:\n\nopener.add_handler(fancy_urllib.FancyProxyHandler())\nAttributeError: 'module' object has no attribute 'FancyProxyHandler'",
+      "submission_time": "2021. 06. 22. 10:03:43",
+      "view": 345,
+      "vote": 52,
+      "id": 28
+    },
+    {
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "How are the new tf.contrib.summary summaries in TensorFlow evaluated?",
+      "message": "I'm having a bit of trouble understanding the new tf.contrib.summary API. In the old one, it seemed that all one was supposed to do was to run tf.summary.merge_all() and run that as an op.\n\nBut now we have things like tf.contrib.summary.record_summaries_every_n_global_steps, which can be used like this:\n\nimport tensorflow.contrib.summary as tfsum\n\nsummary_writer = tfsum.create_file_writer(logdir, flush_millis=3000)\nsummaries = []\n\n# First we create one summary which runs every n global steps\nwith summary_writer.as_default(), tfsum.record_summaries_every_n_global_steps(30):\nsummaries.append(tfsum.scalar(\"train/loss\", loss))\n\n# And then one that runs every single time?\nwith summary_writer.as_default(), tfsum.always_record_summaries():\nsummaries.append(tfsum.scalar(\"train/accuracy\", accuracy))\n\n# Then create an optimizer which uses a global step\nstep = tf.create_global_step()\ntrain = tf.train.AdamOptimizer().minimize(loss, global_step=step)\nAnd now come a few questions:\n\nIf we just run session.run(summaries) in a loop, I assume that the accuracy summary would get written every single time, while the loss one wouldn't, because it only gets written if the global step is divisible by 30?\nAssuming the summaries automatically evaluate their dependencies, I never need to run session.run([accuracy, summaries]) but can just run, session.run(summaries) since they have a dependency in the graph, right?\nIf 2) is true, can't I just add a control dependency to the training step so that the summaries are written on every train run? Or is this a bad practice?\nIs there any downside to using control dependencies in general for things which are going to be evaluated at the same time anyway?\nWhy does tf.contrib.summary.scalar (and others) take in a step parameter?\nBy adding a control dependency in 3) I mean doing this:\n\ntf.control_dependencies(summaries):\ntrain = tf.train.AdamOptimizer().minimize(loss, global_step=step)",
+      "submission_time": "2021. 07. 17. 10:04:04",
+      "view": 78,
+      "vote": 8,
+      "id": 29
+    },
+    {
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "How to use pygame module?",
+      "message": "import pygame\nimport time\nimport datetime\ncup=int(input(\"please enter how many cups you want to drink in a day: \"))\ninterval=int(input(\"please enter after how many minutes we should remind you: \"))\nwaterat=time.time() #gives some random time which will help we know the duration\nintervalsec=interval*60\nif (cup>0):\nif (time.time()-waterat)>intervalsec:\nprint(\"DRINK WATER!!!!!!\")\nwhile (true):\npygame.mixer.music.load('water.mp3')\npygame.mixer.music.play(-1)\n#plays infinite time\nword=input(\"enter done if you done drinking water: \")\nif (word.lower==\"done\"):\ncup=cup-1\nwaterat=time.time()\nf=open(\"drinktime.txt\",\"a\")\nf.write(datetime.datetime.now())\n#datetime function is inside datetime module\nbreak\ntime.sleep(60)\n#program sleep for 60 sec\nthe error I get is-\n\nTraceback (most recent call last):\nFile \"C:/Users/Nishant/Desktop/practice/water reminder/drink.py\", line 1, in\nimport pygame\nFile \"C:\\Users\\Nishant\\AppData\\Roaming\\Python\\Python37\\site-packages\\pygame\\__init__.py\", line 120, in\nfrom pygame.base import *\nModuleNotFoundError: No module named 'pygame.base'",
+      "submission_time": "2021. 01. 28. 10:05:09",
+      "view": 5667,
+      "vote": 758,
+      "id": 30
+    },
+    {
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "How do I take my Python skills to the next level?",
+      "message": "How do I take my Python skills to the next level?\n",
+      "submission_time": "2021. 08. 03. 10:05:47",
+      "view": 789,
+      "vote": 87,
+      "id": 31
+    },
+    {
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "Sql Update Query",
+      "message": "I have a table T1 which contains three columns: Id, Name, Address\n\nThere is another table T2 which contains 2 columns Id, New_Address. Id column of T2 is same as of T1.\n\nI need a query which will update Address column of T1 with New_Address of T2.\n\nI can do it through a loop by checking ID and executing update statement. How can it has to be done with a query?",
+      "submission_time": "2021. 05. 01. 10:06:01",
+      "view": 456,
+      "vote": 65,
+      "id": 32
+    },
+    {
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "Best and/or fastest way to create lists in python?",
+      "message": "I don't think there would be any performance difference given that the lists have only 50 elements, but what if I need a list of a million elements? Would the use of xrange make any improvement? Which is the preferred/fastest way to create and initialize lists in python?",
+      "submission_time": "2021. 04. 14. 10:06:27",
+      "view": 122,
+      "vote": 22,
+      "id": 33
+    },
+    {
+      "user_id": 1,
+      "user_name": "Zoli",
+      "by": "gergo@gmail.com",
+      "title": "sadadad",
+      "message": "adadad adad\nadadad",
+      "submission_time": "2021. 10. 07. 10:23:16",
+      "view": 0,
+      "vote": 0,
+      "id": 34
+    }
+  ],
+  "answers": [
+    {
+      "id": 2,
+      "question_id": 20,
+      "user_id": 1,
+      "author": "Margaret",
+      "content": "some answer 2",
+      "avatar": "https://i.pravatar.cc/400?img=16",
+      "datetime": "Tue Oct 05 2021 23:16:13 GMT+0200 (Central European Summer Time)"
+    },
+    {
+      "author": "Pisti",
+      "user_id": 1,
+      "question_id": 25,
+      "avatar": "https://i.pravatar.cc/400?img=33",
+      "content": "new answer",
+      "datetime": "Wed Oct 06 2021 12:15:46 GMT+0200 (Central European Summer Time)",
+      "id": 4
+    },
+    {
+      "author": "Pisti",
+      "user_id": 1,
+      "question_id": 27,
+      "avatar": "https://i.pravatar.cc/400?img=33",
+      "content": "dfgdfgdfgfdg fdg",
+      "datetime": "Wed Oct 06 2021 15:30:03 GMT+0200 (Central European Summer Time)",
+      "id": 5
+    },
+    {
+      "author": "Pisti",
+      "user_id": 1,
+      "question_id": 29,
+      "avatar": "https://i.pravatar.cc/400?img=33",
+      "content": "I just played around with this a little bit, and it seems that if one combines tf.control_dependencies with tf.record_summaries_every_n_global_steps it behaves as expected and the summary only gets recorded every nth step. But if they are run together within a session, such as session.run([train, summs]), the summaries are stored every once in a while, but not exactly every nth step. I tested this with n=2 and with the second approach the summary was often written at odd steps, while with the control dependency approach it was always on an even step.",
+      "datetime": "Thu Oct 07 2021 12:04:46 GMT+0200 (Central European Summer Time)",
+      "id": 6
+    },
+    {
+      "author": "Pisti",
+      "user_id": 1,
+      "question_id": 30,
+      "avatar": "https://i.pravatar.cc/400?img=33",
+      "content": "Your question is not well made. You should have given us more details so we can better answer you. Did you install pygame correctly? What version of Python do you have?\n\nI copied your code and it was interpreted fine. It means you simply did not import pygame properly.\n\nI think you will find answer in this thread:\n\nPygame \"No module called pygame.base\"",
+      "datetime": "Thu Oct 07 2021 12:05:22 GMT+0200 (Central European Summer Time)",
+      "id": 7
+    },
+    {
+      "author": "Pisti",
+      "user_id": 1,
+      "question_id": 32,
+      "avatar": "https://i.pravatar.cc/400?img=33",
+      "content": "very simple...",
+      "datetime": "Thu Oct 07 2021 12:06:13 GMT+0200 (Central European Summer Time)",
+      "id": 8
+    },
+    {
+      "author": "Pisti",
+      "user_id": 1,
+      "question_id": 33,
+      "avatar": "https://i.pravatar.cc/400?img=33",
+      "content": "In python, as far as I know, there are at least 3 to 4 ways to create and initialize lists of a given size:\n\nSimple loop with append:\n\nmy_list = []\nfor i in range(50):\nmy_list.append(0)\n\nSimple loop with +=:\n\nmy_list = []\nfor i in range(50):\nmy_list += [0]\n\nList comprehension:\n\nmy_list = [0 for i in range(50)]\n\nList and integer multiplication:\n\nmy_list = [0] * 50\n\nIn these examples I don't think there would be any performance difference given that the lists have only 50 elements, but what if I need a list of a million elements? Would the use of xrange make any improvement? Which is the preferred/fastest way to create and initialize lists in python?",
+      "datetime": "Thu Oct 07 2021 12:06:39 GMT+0200 (Central European Summer Time)",
+      "id": 9
+    },
+    {
+      "author": "Pisti",
+      "user_id": 1,
+      "question_id": 20,
+      "avatar": "https://i.pravatar.cc/400?img=33",
+      "content": "valamicsoda ize, izeke",
+      "datetime": "Sat Oct 16 2021 23:18:12 GMT+0200 (Central European Summer Time)",
+      "id": 11
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Gergo",
+      "email": "gergo@gmail.com",
+      "password": "asdf",
+      "age": "34",
+      "github": "http://github.com/GergoDEV",
+      "introduction": "I'am a Self-Motivated and Proficient Front-End Web Developer with the skills that needed for a Pixel Perfect beautiful Responsive WEB Design."
+    }
+  ]
+}
